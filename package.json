@@ -1,0 +1,64 @@
+{
+  "name": "next-template",
+  "version": "1.0.0",
+  "description": "Next.js template repository",
+  "main": "index.js",
+  "repository": "https://github.com/gaston-flores/next-template.git",
+  "author": "Gaston Flores <gaston.a.flores@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "next dev",
+    "start:prod": "next start",
+    "dev": "next dev",
+    "build": "next build",
+    "test": "jest",
+    "lint": "eslint src/**/*.{js,jsx}"
+  },
+  "dependencies": {
+    "next": "^9.3.5",
+    "normalize.css": "^8.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^8.3.4",
+    "commitlint": "^8.3.5",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^23.8.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^3.0.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.2.5",
+    "jest": "^25.4.0",
+    "lint-staged": "^10.1.7",
+    "prettier": "^2.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $GIT_PARAMS",
+      "pre-commit": "lint-staged",
+      "push": "test"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": "eslint --fix"
+  },
+  "jest": {
+    "setupFiles": [
+      "./src/setupTests.js"
+    ]
+  }
+}
