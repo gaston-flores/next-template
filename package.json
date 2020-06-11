@@ -7,9 +7,8 @@
   "author": "Gaston Flores <gaston.a.flores@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "next dev",
-    "start:prod": "next start",
     "dev": "next dev",
+    "start": "next start",
     "build": "next build",
     "test": "jest",
     "lint": "eslint src/**/*.{js,jsx}"
